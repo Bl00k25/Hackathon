@@ -6,16 +6,7 @@ Created on Sat Mar 25 11:07:45 2023
 """
 import mysql.connector as msql
 
-
 class InscriptionClass:
-    name = nameField.get()
-    firstname = firstnameField.get()
-    pseudo = pseudoField.get()
-    password = passwordField.get()
-    vpassword = vpasswordField.get()
-
-    db = msql.connect(database="hackathon_db", username="root", passwd="", host="localhost")
-    dbcur = db.cursor()
 
     def __init__(self, name, firstname, pseudo, password, vpassword):
         if (password == vpassword):
