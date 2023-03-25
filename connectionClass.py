@@ -4,10 +4,10 @@ import os
 
 class ConnectionClass:
     def __init__(self, pseudo, password):
-        db = msql.connect(database="hackathon_db", username="root", passwd="", host="localhost")
+        db = msql.connect(database="hackathon_db", user="root", passwd="", host="localhost")
         dbcur = db.cursor()
 
-        query = "select * from user where pseudo = %s"
+        query = "select pseudo,password,id from user where pseudo = %s"
         dbcur.execute(query, (pseudo,))
 
         result = dbcur.fetchone()
@@ -20,3 +20,4 @@ class ConnectionClass:
                 print("Mot de passe incorrect")
         else:
             print("Utilisateur introuvable")
+
