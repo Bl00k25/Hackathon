@@ -15,7 +15,7 @@ class ConnectionClass:
         if result:
             if password == result[2]:
                 print("Connecté")
-                os.open("MainpPage.py")
+                os.open(MainPage)
             else:
                 print("Mot de passe incorrect")
         else:

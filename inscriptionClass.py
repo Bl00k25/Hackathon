@@ -7,7 +7,7 @@ Created on Sat Mar 25 11:07:45 2023
 import mysql.connector as msql
 import os
 
-import user
+import globalVar
 
 currentuser= None
 
@@ -23,5 +23,5 @@ class InscriptionClass:
             dbcur.execute("select id from user where name='%s'", name)
             id = dbcur.fetchone()
             global currentUser
-            currentUser = user.User(id, name, firstname, pseudo, password)
+            currentUser = globalVar.User(id, name, firstname, pseudo, password)
             os.open(connectionpage)
